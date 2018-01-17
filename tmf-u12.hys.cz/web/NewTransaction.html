@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="mystyle.css">
+	</head>
+	<body>
+		<ul>
+			<li><a href="NewTransaction.html">Add Transaction</a></li>
+			<li><a href="NewUser.html">New User</a></li>
+			<li><a href="AddPayment.html">Add payment</a></li>
+			<li><a href="ShowData.php">Show Data</a></li>
+			<li><a href="ShowUsers.php">Show Users</a></li>
+			<li><a href="mailto:lukas.caha@outlook.com">Contact</a></li>
+		</ul>
+		<div class="vstup">
+		<form action="input.php" method="post">
+		Name: <input type="text" name="name" required autofocus><br>
+		Amount: <input type="number" value="0" name="amount" min="1" max="5000" required><br>
+		Comment: <input type="text" value="Lorem ipsum" name="comment" required><br>
+		Admincode: <input type="password" name="admincode" autocomplete="off" required><br>
+		<input type="submit">
+		</form>
+		</div>
+		
+	</body>
+</html>

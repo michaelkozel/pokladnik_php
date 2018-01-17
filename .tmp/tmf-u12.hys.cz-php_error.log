@@ -1,0 +1,9 @@
+[28-Aug-2017 13:34:22 Europe/Prague] PHP Notice:  Undefined variable: transactions_posts in /home/users/tmfu12hyscz/tmf-u12.hys.cz/web/AndroidAppRequests/GetTransactions.php on line 35
+[28-Aug-2017 13:35:07 Europe/Prague] PHP Notice:  Undefined variable: transactions_posts in /home/users/tmfu12hyscz/tmf-u12.hys.cz/web/AndroidAppRequests/GetTransactions.php on line 35
+[28-Aug-2017 13:35:14 Europe/Prague] PHP Notice:  Undefined variable: transactions_posts in /home/users/tmfu12hyscz/tmf-u12.hys.cz/web/AndroidAppRequests/GetTransactions.php on line 35
+[28-Aug-2017 13:35:30 Europe/Prague] PHP Notice:  Undefined variable: posts in /home/users/tmfu12hyscz/tmf-u12.hys.cz/web/AndroidAppRequests/GetJsonEvents.php on line 33
+[28-Aug-2017 13:36:28 Europe/Prague] PHP Notice:  Undefined variable: transactions_posts in /home/users/tmfu12hyscz/tmf-u12.hys.cz/web/AndroidAppRequests/GetTransactions.php on line 35
+[28-Aug-2017 13:48:11 Europe/Prague] PHP Notice:  Undefined variable: transactions_posts in /home/users/tmfu12hyscz/tmf-u12.hys.cz/web/AndroidAppRequests/GetTransactions.php on line 35
+[28-Aug-2017 14:15:21 Europe/Prague] PHP Parse error:  syntax error, unexpected '.' in /home/users/tmfu12hyscz/tmf-u12.hys.cz/web/AndroidAppRequests/AddAction.php on line 23
+[28-Aug-2017 14:15:35 Europe/Prague] PHP Parse error:  syntax error, unexpected '.' in /home/users/tmfu12hyscz/tmf-u12.hys.cz/web/AndroidAppRequests/AddAction.php on line 23
+[28-Aug-2017 14:15:53 Europe/Prague] PHP Parse error:  syntax error, unexpected '.' in /home/users/tmfu12hyscz/tmf-u12.hys.cz/web/AndroidAppRequests/AddAction.php on line 23

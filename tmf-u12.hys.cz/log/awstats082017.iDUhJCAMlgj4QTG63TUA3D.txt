@@ -1,0 +1,281 @@
+AWSTATS DATA FILE 7.4 (build 20150714)
+# If you remove this file, all statistics for date 201708 will be lost/reset.
+# Last config file used to build this data file was /etc/awstats/awstats.iDUhJCAMlgj4QTG63TUA3D.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2005                
+POS_TIME 2679                
+POS_VISITOR 6335                
+POS_DAY 6649                
+POS_DOMAIN 3273                
+POS_LOGIN 3502                
+POS_ROBOT 3657                
+POS_WORMS 3897                
+POS_EMAILSENDER 4028                
+POS_EMAILRECEIVER 4171                
+POS_SESSION 6972                
+POS_SIDER 7167                
+POS_FILETYPES 4306                
+POS_DOWNLOADS 4441                
+POS_OS 4489                
+POS_BROWSER 4601                
+POS_SCREENSIZE 4770                
+POS_UNKNOWNREFERER 4844                
+POS_UNKNOWNREFERERBROWSER 4931                
+POS_ORIGIN 5013                
+POS_SEREFERRALS 5151                
+POS_PAGEREFS 5295                
+POS_SEARCHWORDS 5443                
+POS_KEYWORDS 5595                
+POS_MISC 2343                
+POS_ERRORS 5654                
+POS_CLUSTER 3358                
+POS_SIDER_404 5756                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20170828004824 5 855 12583283528011
+FirstTime 20170802175254
+LastTime 20170827193513
+LastUpdate 20170828055535 5 0 5 0 0
+TotalVisits 19                  
+TotalUnique 5                   
+MonthHostsKnown 0                   
+MonthHostsUnknown 5                   
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 0 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 1 1 741 0 1 0
+1 4 4 1816 0 0 0
+2 0 0 0 0 0 0
+3 0 0 0 0 0 0
+4 0 0 0 0 0 0
+5 0 0 0 1 2 19468
+6 0 0 0 0 0 0
+7 0 0 0 3 4 22700
+8 0 0 0 1 1 741
+9 0 0 0 2 4 43840
+10 4 4 3555 0 0 0
+11 0 0 0 1 2 498
+12 8 8 1816 1 3 498
+13 21 22 31794 0 2 0
+14 6 6 888 2 5 996
+15 28 29 60084 1 5 19468
+16 0 0 0 0 0 0
+17 4 5 8448 0 2 0
+18 27 27 12575 1 2 18970
+19 101 102 59783 7 10 19468
+20 85 85 62228 17 18 0
+21 207 208 166774 24 25 118672
+22 98 98 62388 13 13 21114
+23 45 45 30735 0 1 0
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 639 644 503625
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 3
+no_user_agent 16 1094 20170825222836 0
+ia_archiver 7 10869 20170813094315 0
+favicon 6 2988 20170827142625 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 4
+css 5 6165 0 0
+php 604 473890 0 0
+html 33 22154 0 0
+Unknown 2 1416 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 3
+linuxandroid 320 320
+win8.1 308 305
+win7 16 14
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 5
+chrome59.0.3071.115 24 22
+chrome60.0.3112.90 26 24
+android 320 320
+chrome60.0.3112.101 273 272
+chrome60.0.3112.113 1 1
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 0
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 0
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 470 470
+From1 0 0
+From2 0 0
+From3 0 0
+From4 169 174
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 0
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 0
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 2
+500 36 5902
+404 14 265580
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 6
+tmf-u12/androidAppRequests/GetJsonEvents.php 5 -
+tmf-u12/robots.txt 4 -
+tmf-u12/AndroidAppRequests/GetJSon.php 1 -
+tmf-u12/AndroidAppRequests/Notifications/pushAndroid.php 2 -
+tmf-u12/AndroidAppRequests/Notifications/push.php 1 -
+tmf-u12/AndroidAppRequests/test.txt 1 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 5
+89.177.238.30 606 609 472211 20170827193513
+62.84.155.76 16 16 6097 20170825135240
+2a00:ca8:a1f:ce27:c894:8be7:9cc7:fa8a 8 9 8813 20170820215118
+2a00:ca8:a1f:ce27:4b5:f300:9b0:d2f 6 7 11604 20170802181501
+37.48.46.242 3 3 4900 20170813191138
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 12
+20170802 6 7 11604 1
+20170803 14 15 26868 1
+20170804 2 2 1416 1
+20170813 3 3 4900 1
+20170816 17 18 42581 2
+20170817 11 11 23449 2
+20170820 136 137 134855 2
+20170821 5 5 4296 2
+20170822 6 6 888 1
+20170824 261 262 144665 1
+20170825 177 177 107605 4
+20170827 1 1 498 1
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 6
+1h+ 3
+5mn-15mn 3
+15mn-30mn 1
+2mn-5mn 1
+0s-30s 7
+30s-2mn 4
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 17
+tmf-u12/AndroidAppRequests/GetJson.php 103 148212 5 1
+tmf-u12/AndroidAppRequests/GetTransactions.php 100 59426 0 1
+tmf-u12/AddPayment.php 97 44240 1 2
+tmf-u12/ShowData.php 78 136180 0 5
+tmf-u12/AndroidAppRequests/Notifications/pushNotificationTopic.php 61 2680 1 0
+tmf-u12/AndroidAppRequests/NewTransaction.php 58 0 0 1
+tmf-u12/ShowUsers.php 36 74208 0 2
+tmf-u12/AndroidAppRequests/Notifications/pushNotification.php 33 3973 1 0
+tmf-u12/AndroidAppRequests/GetJsonEvents.php 25 1973 0 0
+tmf-u12/ 11 5478 6 1
+tmf-u12/AndroidAppRequests/AddAction.php 2 0 1 0
+tmf-u12/NewTransaction.html 6 5274 0 0
+tmf-u12/AndroidAppRequests/Notifications/pushAndroid.php 7 1182 1 2
+tmf-u12/AddPayment.html 8 5928 1 1
+tmf-u12/NewUser.html 8 5474 0 0
+tmf-u12/input.php 4 1816 1 2
+tmf-u12/AndroidAppRequests/test 2 1416 1 1
+END_SIDER

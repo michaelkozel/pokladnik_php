@@ -4,7 +4,7 @@
 	</head>
 	<body>
 		<ul>
-			<li><a href="index.html">Home</a></li>
+			<li><a href="index.php">Home</a></li>
 			<li><a href="mailto:lukas.caha@outlook.com">Contact</a></li>
 		</ul>
 		<div class="vstup">

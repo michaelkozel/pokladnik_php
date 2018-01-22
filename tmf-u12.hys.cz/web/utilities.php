@@ -7,7 +7,8 @@
  */
 
 $GLOBALS['secretpassword'] = "admin";
-$GLOBALS['access'] = false;
+//todo dodělat přihlašování
+$GLOBALS['access'] = true;
 function firstInitialization()
 {
     $password = $_POST["password"];
@@ -23,7 +24,7 @@ function firstInitialization()
 function test()
 {
     echo("funguju");
-    if (!$GLOBALS['secretpassword']) {
+    if (!$GLOBALS['access']) {
         $GLOBALS['access'] = false;
         echo("Nesprávné heslo, přístup odepřen!");
     } else {

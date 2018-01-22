@@ -4,9 +4,9 @@
 	</head>
 	<body>
 		<ul>
-			<li><a href="NewTransaction.html">Add Transaction</a></li>
+			<li><a href="NewTransaction.php">Add Transaction</a></li>
 			<li><a href="NewUser.html">New User</a></li>
-			<li><a href="AddPayment.html">Add payment</a></li>
+			<li><a href="AddPayment.php">Add payment</a></li>
 			<li><a href="ShowData.php">Show Data</a></li>
 			<li><a href="ShowUsers.php">Show Users</a></li>
 			<li><a href="mailto:lukas.caha@outlook.com">Contact</a></li>

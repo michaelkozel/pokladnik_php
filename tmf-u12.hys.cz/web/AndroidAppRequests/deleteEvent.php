@@ -17,7 +17,6 @@ $servername = "sql.endora.cz:3308";
 $server_username = "tmfu121474034453";
 $server_password = "jahnvita";
 $id = $_POST["id"]; // id tabulky
-$id = 1; // id tabulky
 $nazevTabulky = $id . "dat"; // id je pouze cislo nazev pridava za cislo "dat"
 
 //zjistit cenu
@@ -43,14 +42,16 @@ while ($row = mysqli_fetch_assoc($result)) {
 $odecitanaCastka = $pocetZaplacenych * $cena;
 $dbName = "tmfu121474034453";
 $connection = new mysqli($servername, $server_username, $server_password, $dbName);
-$sql = "SELECT Balance FROM Users WHERE Name = Pokladna";
+$sql = "SELECT Balance FROM Users WHERE Name = 'Pokladna'";
 $result = mysqli_query($connection, $sql);
+$row = mysqli_fetch_assoc($result);
 $pokladnaAmount = $row['Balance'];
+echo("aktualni" . $pokladnaAmount);
 $pokladnaAmount = $pokladnaAmount - $odecitanaCastka;
-$sql = "UPDATE Users SET Balance = $pokladnaAmount WHERE Name = 'Pokladna'";
+$sql = "UPDATE Users SET Balance = '$pokladnaAmount' WHERE Name = 'Pokladna'";
 $result = mysqli_query($connection, $sql);
-echo("odecitanaCastka = " . $odecitanaCastka . " amount pokladny " . $pokladnaAmount . " pocet zaplacenych " . $pocetZaplacenych . "cena " . $cena);
-/*
+echo( "odecitanaCastka = " . $odecitanaCastka . " amount pokladny " . $pokladnaAmount . " pocet zaplacenych " . $pocetZaplacenych . "cena " . $cena);
+
 //smazat tabulky
 $dbName = "platbyakce";
 $connection = new mysqli($servername, $server_username, $server_password, $dbName);
@@ -65,6 +66,6 @@ $sql = "DELETE FROM Akce WHERE id = '$id'";
 
 //$sql = "INSERT INTO ".$nazevTabulky." (Name, Surname, Zaplatil)VALUES ('jmeno', 'prijmeni', 0)";
 $result = mysqli_query($connection, $sql);
-*/
+
 
 //echo(" Smazan radek s id '$id' ");

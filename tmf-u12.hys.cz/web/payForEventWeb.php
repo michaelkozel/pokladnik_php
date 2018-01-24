@@ -88,20 +88,28 @@ $title = $row["Titulek"];
                             $result = mysqli_query($connection, $sql);
                         }
                     }
-                    //Aktualizace celkového počtu peněz v pokladně pomocí rozdílu zaplacených před aktualizací a po aktualizaci
-                    //zjištění ceny
-                    $sql1 = "SELECT Cena FROM Akce WHERE ID = $id";
-                    $result1 = mysqli_query($connection2, $sql1);
-                    $row = mysqli_fetch_assoc($result1);
-                    $cena = $row['Cena'];
-                    $rozdilZaplacenych = $zaplatilopoPridani - $zaplatilo;
-                    $amount = $cena * $rozdilZaplacenych;
-                    //samotná měna počtu peněz v pokladně
-                    $sql2 = "UPDATE Users SET Balance = Balance + '$amount' WHERE Surname = 'Pokladna'";
-                    $result2 = mysqli_query($connection2, $sql2);
                 } else {
-                    echo("Pravděpodobně nepřicházíte ze stránky pro zadání platby");
+                    for ($i = 1; $i <= $pocet; $i++) {
+
+                            echo($i . " nezaplaceno <br>");
+                            $connection = new mysqli($servername, $server_username, $server_password, $dbName);
+                            $sql = "UPDATE $nazevTabulky SET Zaplatil = '0' WHERE ID = $i";
+                            $result = mysqli_query($connection, $sql);
+
+                    }
+
                 }
+                //Aktualizace celkového počtu peněz v pokladně pomocí rozdílu zaplacených před aktualizací a po aktualizaci
+                //zjištění ceny
+                $sql1 = "SELECT Cena FROM Akce WHERE ID = $id";
+                $result1 = mysqli_query($connection2, $sql1);
+                $row = mysqli_fetch_assoc($result1);
+                $cena = $row['Cena'];
+                $rozdilZaplacenych = $zaplatilopoPridani - $zaplatilo;
+                $amount = $cena * $rozdilZaplacenych;
+                //samotná měna počtu peněz v pokladně
+                $sql2 = "UPDATE Users SET Balance = Balance + '$amount' WHERE Surname = 'Pokladna'";
+                $result2 = mysqli_query($connection2, $sql2);
             }
             ?>
 

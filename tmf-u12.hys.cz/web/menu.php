@@ -6,16 +6,11 @@
 * Time: 12:54
 */
 -->
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
-</head>
-<ul>
+<ul class="menu">
     <li><a href="NewTransaction.php">Add Transaction</a></li>
-    <li><a href="NewUser.html">New User</a></li>
+    <li><a href="NewUser.php">New User</a></li>
     <li><a href="AddPayment.php">Add payment</a></li>
     <li><a href="ShowData.php">Show Data</a></li>
     <li><a href="ShowUsers.php">Show Users</a></li>
-    <li><a href="mailto:lukas.caha@outlook.com">Contact</a></li>
+    <li><a href="mailto:michael.kozel1@gmail.com">Contact</a></li>
 </ul>
-</html>

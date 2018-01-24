@@ -5,7 +5,7 @@
 <body>
 <ul>
     <li><a href="NewTransaction.php">Add Transaction</a></li>
-    <li><a href="NewUser.html">New User</a></li>
+    <li><a href="NewUser.php">New User</a></li>
     <li><a href="AddPayment.php">Add payment</a></li>
     <li><a href="ShowData.php">Show Data</a></li>
     <li><a href="ShowUsers.php">Show Users</a></li>

@@ -19,7 +19,6 @@ $sql = "SELECT Name,Surname,Zaplatil FROM ".$nazevTabulky." ORDER BY ID ASC";
 $result = mysqli_query($connection ,$sql);
 
 
-
     while ($row = mysqli_fetch_assoc($result)) {
 
         $name = $row['Name'];

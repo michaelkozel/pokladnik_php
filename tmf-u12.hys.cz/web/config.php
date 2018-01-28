@@ -6,7 +6,7 @@
  * Time: 13:08
  */
 $GLOBALS['adminPassword'] = "aaabbcc";  //admin heslo pro přístup k datům
-//database
+//databaze
 $GLOBALS['servername'] = "sql.endora.cz:3308";
 $GLOBALS['username'] = "tmfu121474034453";   //username k databazi
 $GLOBALS['password'] = "jahnvita";           //password k databazi

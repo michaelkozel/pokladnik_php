@@ -5,7 +5,6 @@
  * Date: 2. 9. 2017
  * Time: 22:32
  */
-include '../utilities.php';
 
 $servername = "sql.endora.cz:3308";
 $server_username = "tmfu121474034453";

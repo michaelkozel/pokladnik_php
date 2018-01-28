@@ -1,32 +1,15 @@
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
-</head>
-<body>
-<ul>
-    <li><a href="NewTransaction.php">Add Transaction</a></li>
-    <li><a href="NewUser.php">New User</a></li>
-    <li><a href="AddPayment.php">Add payment</a></li>
-    <li><a href="ShowData.php">Show Data</a></li>
-    <li><a href="ShowUsers.php">Show Users</a></li>
-    <li><a href="mailto:lukas.caha@outlook.com">Contact</a></li>
-</ul>
-</body>
-</html>
-
 <?php
-$name = $_POST["name"];
-$amount = $_POST["amount"];
-$date = date("Y") . "-" . date("m") . "-" . date("d");
-//$sum = $_POST["sum"]; add to last row
-$comment = $_POST["comment"];
-$password = $_POST["admincode"];
-$sum = 0;
-
 $servername = "sql.endora.cz:3308";
 $server_username = "tmfu121474034453";
 $server_password = "jahnvita";
 $dbName = "tmfu121474034453";
+
+$name = $_POST["name"];
+$surname = $_POST["surname"];
+$amount = $_POST["amount"];
+$date = date("Y") . "-" . date("m") . "-" . date("d");
+$sum = $_POST["amount"];
+$comment = $_POST["comment"];
 
 //connection
 $connection = new mysqli($servername, $server_username, $server_password, $dbName);
@@ -34,21 +17,23 @@ $connection = new mysqli($servername, $server_username, $server_password, $dbNam
 if (!$connection) {
     die("Připojení se nezdařilo" . mysqli_connect_error());
 }
-if ($password != "misakozel") {
-    die("<h1>Wrong Admincode</h1>");
-}
+$allName = $name." ".$surname;
 //insert new transaction
-$sql = "INSERT INTO Transakce(Name, Amount, Date, Sum, Comment) VALUES('" . $name . "','" . $amount . "','" . $date . "','" . $sum . "','" . $comment . "')";
+$sql = "INSERT INTO Transakce(Name, Amount, Date, Sum, Comment) VALUES('".$allName."','" . $amount . "','" . $date . "','" . $sum . "','" . $comment . "')";
 $result = mysqli_query($connection, $sql);
 
 //add money to bank
 $sql2 = "UPDATE Users SET Balance = Balance + '$amount' WHERE Surname = 'Pokladna'";
 $result2 = mysqli_query($connection, $sql2);
 
-//add money to user
-$sql3 = "UPDATE Users SET Balance = Balance + '$amount' WHERE Surname = '$name'";
-$result3 = mysqli_query($connection, $sql3);
+{
+    $sql3 = "UPDATE Users SET Balance = Balance + '$amount' WHERE Surname = '$surname' AND Name = '$name'";
+    $result3 = mysqli_query($connection, $sql3);
+
+}
+header("Location: /index.php");
+/* Make sure that code below does not get executed when we redirect. */
+exit;
 
 $connection->close();
-
 ?>

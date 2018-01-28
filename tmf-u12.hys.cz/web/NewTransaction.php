@@ -4,16 +4,16 @@
 </head>
 <?php include("menu.php"); ?>
 <div class="vstup">
-    <form action="payForEventWeb.php" method="post">
+    <form action="payForEventWeb.php" method="get">
 
         <?php
         include 'utilities.php';
+        //údaje k připojení k databázi
         $servername = "sql.endora.cz:3308";
         $server_username = "tmfu121474034453";
         $server_password = "jahnvita";
         $dbName = "tmfu121474034453";
         $connection = pripojitNaDb($servername, $server_username, $server_password, $dbName);
-
         if (!$connection) {
             die("Připojení se nezdařilo" . mysqli_connect_error());
         }
@@ -49,16 +49,6 @@
         }
         ?>
         <input type="submit" value="Jít dále">
-    </form>
-</div>
-<div class="vstup">
-    <p>Příspěvek do pokladny</p>
-    <form action="input.php" method="post">
-        <input type="text" name="name" placeholder="Name" required autofocus><br>
-        <input type="number" placeholder="0" placeholder="Amount" name="amount" min="1" max="5000" required><br>
-        <input type="text" placeholder="Comment" name="comment" required><br>
-        <input type="password" name="admincode" autocomplete="off" placeholder="Admincode" required><br>
-        <input type="submit" value="Potvrdit">
     </form>
 </div>
 </body>

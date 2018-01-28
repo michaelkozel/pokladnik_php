@@ -1,6 +1,7 @@
 <?php
 include './Notifications/pushNotificationTopic.php';
 include '../utilities.php';
+
 $servername = "sql.endora.cz:3308";
 $server_username = "tmfu121474034453";
 $server_password = "jahnvita";
@@ -11,9 +12,7 @@ $datum = $_POST["datum"];
 $popis = $_POST["popis"];
 $titulek = $_POST["titulek"];
 
-
 $connection = new mysqli($servername, $server_username, $server_password, $dbName);
-
 if (!$connection)
     die();
 
@@ -24,7 +23,6 @@ $sql = "INSERT INTO Akce(Cena, Popis, Datum,Titulek) VALUES('" . $amount . "','"
 $result = mysqli_query($connection, $sql);
 $id = mysqli_insert_id($connection);
 //vytvořit tabulku s uživatelema v databázi platbyakce
-createTableWithUsers("sql.endora.cz:3308", "tmfu121474034453", "jahnvita", "platbyakce", $id."dat", getUsers());
-
+createTableWithUsers("sql.endora.cz:3308", "tmfu121474034453", "jahnvita", "platbyakce", $id . "dat", getUsers());
 notifikuj("Nová platba!", "Do " . $datumnormalne . " " . $popis . " Zaplatit " . $amount . " Kč");
 ?>

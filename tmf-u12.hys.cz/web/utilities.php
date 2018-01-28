@@ -6,33 +6,8 @@
  * Time: 15:16
  */
 
-$GLOBALS['secretpassword'] = "admin";
-//todo dodělat přihlašování
-$GLOBALS['access'] = true;
-function firstInitialization()
-{
-    $password = $_POST["password"];
-    if ($GLOBALS['secretpassword'] != $password) {
-        $GLOBALS['access'] = false;
-        echo("Nesprávné heslo, přístup odepřen!");
-    } else {
-        $GLOBALS['access'] = granted;
-        echo("Vítej uživateli");
-    }
-}
 
-function test()
-{
-    echo("funguju");
-    if (!$GLOBALS['access']) {
-        $GLOBALS['access'] = false;
-        echo("Nesprávné heslo, přístup odepřen!");
-    } else {
-        $GLOBALS['access'] = granted;
-        echo("Vítej uživateli");
-    }
-
-}
+include "/config.php";
 
 /**
  * vrací 2d pole
@@ -70,7 +45,6 @@ function addUser($name, $surname)
 
 function createTableWithUsers($servername, $server_username, $server_password, $dbName, $tableName, $users)
 {
-
 
     $connection = pripojitNaDb($servername, $server_username, $server_password, $dbName);
 

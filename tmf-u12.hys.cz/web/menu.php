@@ -8,6 +8,7 @@
 -->
 <ul class="menu">
     <li><a href="NewTransaction.php">Add Transaction</a></li>
+    <li><a href="prispevek.php">Přispět</a></li>
     <li><a href="NewUser.php">New User</a></li>
     <li><a href="AddPayment.php">Add payment</a></li>
     <li><a href="ShowData.php">Show Data</a></li>

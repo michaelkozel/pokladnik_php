@@ -3,7 +3,14 @@
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
 <body>
-<? include("menu.php"); ?>
+<? include("menu.php");
+if (!isset($_COOKIE["prihlaseno"])) {
+    header("Location: /loginformular.php?sitefrom=ShowUsers.php");
+} else {
+    echo("<p>Přihlášen</p>");
+}
+
+?>
 
 <div class="vstup">
     Seřadit podle jména

@@ -4,6 +4,14 @@
 	</head>
 	<body>
     <?php include ("menu.php"); ?>
+    <?php
+
+    if (!isset($_COOKIE["prihlaseno"])) {
+        header("Location: /loginformular.php?sitefrom=NewUser.php");
+    } else {
+        echo("<p>Přihlášen</p>");
+    }
+    ?>
 		<div class="vstup">
             <p>Přidat uživatele</p>
 		<form action="NewUserscript.php" method="post">

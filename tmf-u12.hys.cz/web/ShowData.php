@@ -7,6 +7,11 @@
 		
 		<?php
        include ("menu.php");
+        if (!isset($_COOKIE["prihlaseno"])) {
+            header("Location: /loginformular.php?sitefrom=ShowData.php");
+        } else {
+            echo("<p>Přihlášen</p>");
+        }
 		$servername = "sql.endora.cz:3308";
 		$server_username = "tmfu121474034453";
 		$server_password = "jahnvita";

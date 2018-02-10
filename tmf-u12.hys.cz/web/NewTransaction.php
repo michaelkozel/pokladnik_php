@@ -2,10 +2,15 @@
 <head>
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
-<?php include("menu.php"); ?>
+<?php include("menu.php");
+if (!isset($_COOKIE["prihlaseno"])) {
+    header("Location: /loginformular.php?sitefrom=/NewTransaction.php");
+} else {
+    echo("<p>Přihlášen</p>");
+}
+?>
 <div class="vstup">
     <form action="payForEventWeb.php" method="get">
-
         <?php
         include 'utilities.php';
         //údaje k připojení k databázi

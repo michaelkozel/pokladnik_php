@@ -8,6 +8,13 @@
  * vyhodnocení přispění do třídní pokladny z webu
  */
 include "menu.php";
+
+    if (!isset($_COOKIE["prihlaseno"])) {
+        header("Location: /loginformular.php?sitefrom=/prispevek.php");
+    } else {
+        echo("<p>Přihlášen</p>");
+    }
+
 ?>
 <div class="vstup">
     <p>Přispět do pokladny</p>

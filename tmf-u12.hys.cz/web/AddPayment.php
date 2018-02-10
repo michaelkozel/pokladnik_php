@@ -3,7 +3,13 @@
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
 <body>
-<?php include 'menu.php'; ?>
+<?php include 'menu.php';
+if (!isset($_COOKIE["prihlaseno"])) {
+    header("Location: /loginformular.php?sitefrom=AddPayment.php");
+} else {
+    echo("<p>Přihlášen</p>");
+}
+?>
 <div class="vstup">
     <form action="addPaymentScript.php" method="post">
         Datum: <input type="date" name="datum" required autofocus><br>

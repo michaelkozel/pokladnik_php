@@ -34,6 +34,7 @@ $title = $row["Titulek"];
 <h1>Platba za akci: <? echo($title); ?></h1>
 <div class="vstup">
     <ul>
+
         <form action="payForEventWebExecute.php" method="post">
             <?
             if (isset($_COOKIE["prihlaseno"]) && $_COOKIE["prihlaseno"] == 1) {
@@ -66,8 +67,16 @@ $title = $row["Titulek"];
                     <input type="hidden" name="pocet" value="<?php echo htmlspecialchars($pocet); ?>"/>
                     <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>"/>
                     <input type="hidden" name="zaplatilo" value="<?php echo htmlspecialchars($zaplatilo); ?>"/>
-                    <input type="submit" name="buttonZmeny" value="Potvrdit změny"><?
-                }
+                    <input type="submit" name="buttonZmeny" value="Potvrdit změny">
+                    </form>
+        <p>Přidat uživatele pro tuto akci</p>
+                    <form action="addUserForEvent.php" method="post">
+            <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>"/>
+                        Name: <input type="text" name="name" required autofocus><br>
+                        Surname: <input type="text" name="surname" required><br>
+            <input type="submit" name="buttonAddUser" value="Přidat uživatele pro tuto akci">
+        </form>
+        <? }
             } else {
                 header("Location: /index.php");
                 /* Make sure that code below does not get executed when we redirect. */
@@ -75,7 +84,7 @@ $title = $row["Titulek"];
             }
             ?>
 
-        </form>
+
     </ul>
 </div>
 </body>

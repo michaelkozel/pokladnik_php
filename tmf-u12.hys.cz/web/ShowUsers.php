@@ -11,7 +11,7 @@ if (!isset($_COOKIE["prihlaseno"])) {
 }
 
 ?>
-
+<!--
 <div class="vstup">
     Seřadit podle jména
     <form action="#" method="post">
@@ -19,7 +19,7 @@ if (!isset($_COOKIE["prihlaseno"])) {
         <input type="submit">
     </form>
 </div>
-
+--!>
 <?php
 $servername = "sql.endora.cz:3308";
 $server_username = "tmfu121474034453";

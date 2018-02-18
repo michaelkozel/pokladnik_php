@@ -7,14 +7,15 @@
 */
 -->
 <ul class="menu">
-    <li><a href="index.php">Home</a></li>
-    <li><a href="NewTransaction.php">Add Transaction</a></li>
+    <li><a href="index.php">Domů</a></li>
+    <li><a href="NewTransaction.php">Zaplatit</a></li>
     <li><a href="prispevek.php">Přispět</a></li>
-    <li><a href="NewUser.php">New User</a></li>
-    <li><a href="AddPayment.php">Add payment</a></li>
-    <li><a href="ShowData.php">Show Data</a></li>
-    <li><a href="ShowUsers.php">Show Users</a></li>
-    <li><a href="showActions.php">Show Actions</a></li>
-    <li><a href="mailto:michael.kozel1@gmail.com">Contact</a></li>
+    <li><a href="AddPayment.php">Přidat platbu</a></li>
+    <li><a href="ShowData.php">Zobrazit transakce</a></li>
+    <li><a href="ShowUsers.php">Zobrazit uživatele</a></li>
+    <li><a href="showActions.php">Zobrazit akce</a></li>
+    <li><a href="deleteEvent.php">Odstranit akci</a></li>
+    <li><a href="NewUser.php">Přidat uživatele</a></li>
+    <li><a href="deleteUser.php">Odstranit uživatele</a></li>
     <li><a href="logout.php">Odhlásit se</a></li>
 </ul>

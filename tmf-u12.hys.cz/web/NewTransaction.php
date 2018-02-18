@@ -22,7 +22,7 @@ if (!isset($_COOKIE["prihlaseno"])) {
         if (!$connection) {
             die("Připojení se nezdařilo" . mysqli_connect_error());
         }
-        $sql = "SELECT Titulek, Datum, Cena, id FROM Akce";
+        $sql = "SELECT Titulek, Datum, Cena,Popis, id FROM Akce";
         $result = mysqli_query($connection, $sql);
 
         if (mysqli_num_rows($result) > 0) {
@@ -37,23 +37,23 @@ if (!isset($_COOKIE["prihlaseno"])) {
                     $id = $row['id'];
                     ?>
                 <option value="<?php echo htmlspecialchars($id); ?>"> <?
-                    echo htmlspecialchars($titulek . " " . $datum . " " . "Cena: " . $cena . " Kč") ?></option><?
+                    echo htmlspecialchars($titulek . " ".$popis." " . $datum . " " . "Cena: " . $cena . " Kč") ?></option><?
                     if ($titulek == null) {
                         $titulek = "";
                     }
                     if ($cena == null) {
                         $cena = "0";
                     }
-
                 }
                 ?>
             </select>
+            <input type="submit" value="Jít dále">
             <?
         } else {
             ?><p>Žádné akce nejsou zatím v plánu</p><?
         }
         ?>
-        <input type="submit" value="Jít dále">
+
     </form>
 </div>
 </body>

@@ -36,7 +36,6 @@ if (isset($_POST['platci'])) { // nejaka policka jsou zaskrtnuta
 } else {
     //Nic neni zaskrtnute
     for ($i = 1; $i <= $pocet; $i++) {
-
         echo($i . " nezaplaceno <br>");
         $connection = new mysqli($servername, $server_username, $server_password, $dbName);
         $sql = "UPDATE $nazevTabulky SET Zaplatil = '0' WHERE ID = $i";

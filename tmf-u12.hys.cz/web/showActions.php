@@ -11,7 +11,13 @@
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
 <body>
-<?php include("menu.php");
+<?php
+if (!isset($_COOKIE["prihlaseno"])) {
+    include("nologinMenu.php");
+} else {
+    include("menu.php");
+}
+
 ?>
 
 <?php
@@ -29,6 +35,19 @@ if(!$connection){
 }
 $sql = "SELECT ID, Cena, Popis, Datum,Titulek FROM Akce ORDER BY ID";
 $result = mysqli_query($connection ,$sql);
+
+
+$sql2 = "SELECT Name, Balance FROM Users WHERE Surname = 'Pokladna'";
+$result2 = mysqli_query($connection, $sql2);
+if (mysqli_num_rows($result2) > 0) {
+    while ($row = mysqli_fetch_assoc($result2)) {
+        if ($row['Name'] == 'Pokladna')
+            echo "<center><h3>" . $row['Name'] . " právě obsahuje " . $row['Balance'] . " Kč</h3></center>";
+    }
+
+}
+
+
 
 if(mysqli_num_rows($result) > 0){
     echo ("<h1>Zobrazení akcí</h1>");

@@ -5,7 +5,7 @@
  * Date: 28. 1. 2018
  * Time: 4:31
  */
-include("menu.php");
+include("nologinMenu.php");
 $sitefrom = $_GET["sitefrom"];
 ?>
 <html>
@@ -18,7 +18,6 @@ $sitefrom = $_GET["sitefrom"];
 <p>Pro zobrazení akcí, klikněte v menu na show actions!</p>
 <div class="vstup">
     <form action="login.php" method="post">
-
         <p>Pro pokročilé akce se prosím přihlašte!</p>
 Heslo: <input type="password" name="heslo" autocomplete="off" required>
         <input type="hidden" name="sitefrom" value="<?php echo htmlspecialchars($sitefrom); ?>">

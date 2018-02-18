@@ -12,9 +12,11 @@
 </head>
 <body>
 <?php
-if (!isset($_COOKIE["prihlaseno"])) {
+session_start();
+if (!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true) {
     include("nologinMenu.php");
-} else {
+}
+else {
     include("menu.php");
 }
 
@@ -50,7 +52,7 @@ if (mysqli_num_rows($result2) > 0) {
 
 
 if(mysqli_num_rows($result) > 0){
-    echo ("<h1>Zobrazení akcí</h1>");
+    echo ("<h1>Nadcházející akce:</h1>");
     echo "<table>";
     echo "<tr><th>Cena</th><th>Název</th><th>Popis</th><th>Datum</th></tr>";
     while($row = mysqli_fetch_assoc($result)){

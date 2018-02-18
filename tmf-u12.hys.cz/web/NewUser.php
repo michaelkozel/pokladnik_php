@@ -3,14 +3,14 @@
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
 	</head>
 	<body>
-    <?php include ("menu.php"); ?>
+    <?php
+    session_start();
+    if (!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true) {
+        header("Location: /loginformular.php?sitefrom=/NewTransaction.php");
+    }
+    include ("menu.php"); ?>
     <?php
 
-    if (!isset($_COOKIE["prihlaseno"])) {
-        header("Location: /loginformular.php?sitefrom=NewUser.php");
-    } else {
-        echo("<p>Přihlášen</p>");
-    }
     ?>
 		<div class="vstup">
             <p>Přidat uživatele</p>

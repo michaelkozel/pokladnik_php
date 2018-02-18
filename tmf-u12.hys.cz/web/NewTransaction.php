@@ -2,11 +2,11 @@
 <head>
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
-<?php include("menu.php");
-if (!isset($_COOKIE["prihlaseno"])) {
+<?php
+session_start();
+include("menu.php");
+if (!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true) {
     header("Location: /loginformular.php?sitefrom=/NewTransaction.php");
-} else {
-    echo("<p>Přihlášen</p>");
 }
 ?>
 <div class="vstup">

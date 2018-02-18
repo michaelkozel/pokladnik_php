@@ -7,7 +7,6 @@
  */
 
 include '../utilities.php';
-
 $servername = "sql.endora.cz:3308";
 $server_username = "tmfu121474034453";
 $server_password = "jahnvita";
@@ -15,8 +14,19 @@ $dbName = "platbyakce";  //db s tabulkami lidí pro dané akce s daty jestli zap
 $dbName2 = "tmfu121474034453"; // db s tabulkami akcí
 $connection = new mysqli($servername, $server_username, $server_password, $dbName); //připojení k databázi, kde jsou tabulky platičů k jednotlivým akcím
 $connection2 = new mysqli($servername, $server_username, $server_password, $dbName2); //připojení k databázi s názvy akcí cenou datem titulkem a popisem akce
-smazatAkci();
+$pocet = $_POST["pocet"];
+$id = $_GET["odstranitAkci"];
+if (isset($_POST['pocet'])) {
+    echo("pocet set");
+}
+if (isset($_GET["odstranitAkci"])) {
+    smazatAkci($id);
+} else {
+    //Nic neni zaskrtnute
+    header("Location: /deleteEvent.php");
+}
 
+//header("Location: /index.php");
 
 function smazatAkci($id)
 {
@@ -24,7 +34,7 @@ function smazatAkci($id)
     $servername = "sql.endora.cz:3308";
     $server_username = "tmfu121474034453";
     $server_password = "jahnvita";
-    $nazevTabulky = $id."dat";
+    $nazevTabulky = $id . "dat";
     $dbName = "platbyakce";  //db s tabulkami lidí pro dané akce s daty jestli zaplatili nebo ne
     $dbName2 = "tmfu121474034453"; // db s tabulkami akcí
     $connection = new mysqli($servername, $server_username, $server_password, $dbName); //připojení k databázi, kde jsou tabulky platičů k jednotlivým akcím
@@ -75,7 +85,7 @@ function smazatAkci($id)
 
 //$sql = "INSERT INTO ".$nazevTabulky." (Name, Surname, Zaplatil)VALUES ('jmeno', 'prijmeni', 0)";
     $result = mysqli_query($connection, $sql);
-echo("Smazana akce s id ".$id." odecetlo se ".$odecitanaCastka.""."");
+    echo("Smazana akce s id " . $id . " odecetlo se " . $odecitanaCastka . "" . "");
 }
 
 ?>

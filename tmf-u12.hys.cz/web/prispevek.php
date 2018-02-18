@@ -7,13 +7,12 @@
 /**
  * vyhodnocení přispění do třídní pokladny z webu
  */
+session_start();
 include "menu.php";
 
-    if (!isset($_COOKIE["prihlaseno"])) {
-        header("Location: /loginformular.php?sitefrom=/prispevek.php");
-    } else {
-        echo("<p>Přihlášen</p>");
-    }
+if (!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true) {
+    header("Location: /loginformular.php?sitefrom=/NewTransaction.php");
+}
 
 ?>
 <div class="vstup">

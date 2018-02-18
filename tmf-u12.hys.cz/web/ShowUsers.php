@@ -4,10 +4,10 @@
 </head>
 <body>
 <? include("menu.php");
-if (!isset($_COOKIE["prihlaseno"])) {
-    header("Location: /loginformular.php?sitefrom=ShowUsers.php");
-} else {
-    echo("<p>Přihlášen</p>");
+session_start();
+
+if (!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true) {
+    header("Location: /loginformular.php?sitefrom=/NewTransaction.php");
 }
 
 ?>

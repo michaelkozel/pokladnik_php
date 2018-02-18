@@ -5,6 +5,10 @@
  * Date: 14. 2. 2018
  * Time: 19:39
  */
+session_start();
+if (!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true) {
+    header("Location: /loginformular.php?sitefrom=/NewTransaction.php");
+}
 ?>
 <html>
 <head>
@@ -12,14 +16,7 @@
 </head>
 <body>
 <?php include ("menu.php"); ?>
-<?php
 
-if (!isset($_COOKIE["prihlaseno"])) {
-    header("Location: /loginformular.php?sitefrom=NewUser.php");
-} else {
-    echo("<p>Přihlášen</p>");
-}
-?>
 <div class="vstup">
     <p>Odebrat uživatele</p>
     <form action="deleteUserscript.php" method="post">

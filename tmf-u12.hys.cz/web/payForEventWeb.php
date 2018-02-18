@@ -30,14 +30,16 @@ $sql1 = "SELECT Titulek FROM Akce WHERE ID = '$id'";
 $result1 = mysqli_query($connection2, $sql1);
 $row = mysqli_fetch_assoc($result1);
 $title = $row["Titulek"];
+
+if (!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true) {
+    header("Location: /loginformular.php?sitefrom=/payForEventWeb.php");
+}
 ?>
 <h1>Platba za akci: <? echo($title); ?></h1>
 <div class="vstup">
     <ul>
-
         <form action="payForEventWebExecute.php" method="post">
             <?
-            if (isset($_COOKIE["prihlaseno"]) && $_COOKIE["prihlaseno"] == 1) {
                 if (isset($_GET["zadatAkci"]) && $_GET["zadatAkci"] == "none") {
                     echo("Žádná vybraná akce");
                 } else if (isset($_GET["zadatAkci"])) {
@@ -77,7 +79,7 @@ $title = $row["Titulek"];
             <input type="submit" name="buttonAddUser" value="Přidat uživatele pro tuto akci">
         </form>
         <? }
-            } else {
+             else {
                 header("Location: /index.php");
                 /* Make sure that code below does not get executed when we redirect. */
                 exit;

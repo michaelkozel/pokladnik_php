@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * Created by PhpStorm.
  * User: Michael
@@ -6,6 +7,7 @@
  * Time: 4:11
  */
 include "config.php";
+
 if (isset($_POST["sitefrom"])) {
     $sitefrom = $_POST["sitefrom"];
 } else {
@@ -14,16 +16,13 @@ if (isset($_POST["sitefrom"])) {
 if (isset($_POST["heslo"])) {
     $password = $_POST["heslo"];
 }
-if (!isset($_COOKIE["prihlaseno"]) && $password == getPassword()) {
-    setcookie("prihlaseno", "1", time() + (300), "/");
-    echo "prihlaseno";
-} elseif (isset($_COOKIE["prihlaseno"]) && $password == getPassword()) {
-    setcookie("prihlaseno", "1", time() + (300), "/");
+if ($password == getPassword()) {
+    $_SESSION["logged"] = true;
     echo "prihlaseno";
 } else {
     echo "spatne heslo " . $password . " a " . getPassword();
 }
-
 header("Location: $sitefrom");
+
 /* Make sure that code below does not get executed when we redirect. */
 /*exit;

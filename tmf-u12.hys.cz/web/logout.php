@@ -5,9 +5,7 @@
  * Date: 10. 2. 2018
  * Time: 23:15
  */
-
+session_start();
 include "config.php";
-if(isset($_COOKIE["prihlaseno"]))
-    setcookie("prihlaseno","0","1","/");
-
-header("Location: index.php");
+$_SESSION["logged"] = false;
+header("Location: /loginformular.php?sitefrom=/index.php");

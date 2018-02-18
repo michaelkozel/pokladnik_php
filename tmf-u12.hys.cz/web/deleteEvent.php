@@ -14,6 +14,9 @@
  * Time: 17:30
  */
 session_start();
+if (!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true) {
+    header("Location: /loginformular.php?sitefrom=/NewTransaction.php");
+}
 ?>
 <html>
 <head>
@@ -33,41 +36,32 @@ $connection2 = new mysqli($servername, $server_username, $server_password, $dbNa
 <h1>Kterou akci smazat?</h1>
 <div class="vstup">
     <ul>
-        <form action="deleteEventScript.php" method="post">
-            <?
-            if (isset($_COOKIE["prihlaseno"]) && $_COOKIE["prihlaseno"] == 1) {
-
-            $sql = "SELECT Titulek, Datum, Cena,id FROM Akce";
-            $result = mysqli_query($connection2, $sql);
-            while ($row = mysqli_fetch_assoc($result)) {
-                $titulek = $row['Titulek'];
-                $datum = $row['Datum'];
-                $cena = $row['Cena'];
-                $id = $row['id'];
-                ?>
-                <!-- generování inputu z databáze pomocí php-->
-                <input  type="radio"
-                        name="smazani[]"
-                        value="<?php echo htmlspecialchars($pocet); ?>"><?php echo htmlspecialchars($titulek . " " . $datum . " " . $cena); ?>
-                <input type="hidden"
-                       name="id[]"
-                       value="<?php echo htmlspecialchars($id); ?>">
-
-                <br>
+        <form action="deleteEventScript.php" method="GET">
+            <select name="odstranitAkci">
+                <option value="none">Odstranit akci</option>
                 <?
-            } ?>
 
-            <input type="submit" name="buttonZmeny" value="Smazat">
+                $sql = "SELECT Titulek, Datum, Cena,id FROM Akce";
+                $result = mysqli_query($connection2, $sql);
+                $pocet = 0;
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $titulek = $row['Titulek'];
+                    $datum = $row['Datum'];
+                    $cena = $row['Cena'];
+                    $id = $row['id'];
+                    $pocet++;
+                    ?>
+                    <!-- generování inputu z databáze pomocí php-->
+                    <option value="<?php echo htmlspecialchars($id); ?>"> <?
+                        echo htmlspecialchars($titulek . " " . $popis . " " . $datum . " " . "Cena: " . $cena . " Kč") ?></option>
+                    <br>
+                    <?
+
+                } ?>
+
+                <input type="submit" name="buttonZmeny" value="Smazat">
+            </select>
         </form>
-        <?
-        } else {
-            header("Location: /index.php");
-            /* Make sure that code below does not get executed when we redirect. */
-            exit;
-        }
-        ?>
-
-
     </ul>
 </div>
 </body>

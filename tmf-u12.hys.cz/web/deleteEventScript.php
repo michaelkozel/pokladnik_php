@@ -86,6 +86,7 @@ function smazatAkci($id)
 //$sql = "INSERT INTO ".$nazevTabulky." (Name, Surname, Zaplatil)VALUES ('jmeno', 'prijmeni', 0)";
     $result = mysqli_query($connection, $sql);
     echo("Smazana akce s id " . $id . " odecetlo se " . $odecitanaCastka . "" . "");
+    header("Location: /index.php");
 }
 
 ?>

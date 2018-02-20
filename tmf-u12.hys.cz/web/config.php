@@ -5,7 +5,7 @@
  * Date: 27. 1. 2018
  * Time: 13:08
  */
-$GLOBALS['adminPassword'] = "aaabbcc";  //admin heslo pro přístup k datům
+$GLOBALS['adminPassword'] = "auticko";  //admin heslo pro přístup k datům
 //databaze
 $GLOBALS['servername'] = "sql.endora.cz:3308";
 $GLOBALS['username'] = "tmfu121474034453";   //username k databazi
@@ -39,6 +39,7 @@ function create()
 
 
 //create tables
+    /*
     $sql = "CREATE TABLE MyGuests (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 firstname VARCHAR(30) NOT NULL,
@@ -46,6 +47,7 @@ lastname VARCHAR(30) NOT NULL,
 email VARCHAR(50),
 reg_date TIMESTAMP
 )";
+    */
     $dbname = "tmfu121474034453";
 // Create connection
     $conn = mysqli_connect($GLOBALS['servername'], $GLOBALS['username'], $GLOBALS['password'], $dbname);

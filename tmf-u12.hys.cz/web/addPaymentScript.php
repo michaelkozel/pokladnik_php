@@ -17,8 +17,11 @@ $amount = $_POST["amountPost"];
 $datum = $_POST["datum"];
 $popis = $_POST["popis"];
 $titulek = $_POST["titulek"];
-
-if (isset($_COOKIE["prihlaseno"]) && $_COOKIE["prihlaseno"] == 1) {
+session_start();
+if (!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true) {
+    header("Location: /loginformular.php?sitefrom=/AddPayment.php");
+}
+else {
     $connection = new mysqli($servername, $server_username, $server_password, $dbName);
 
     if (!$connection)
@@ -32,10 +35,6 @@ if (isset($_COOKIE["prihlaseno"]) && $_COOKIE["prihlaseno"] == 1) {
 //vytvořit tabulku s uživatelema v databázi platbyakce
     createTableWithUsers($servername, $server_username, $server_password, "platbyakce", $id . "dat", getUsers());
     notifikuj("Nová platba!", "Do " . $datumnormalne . " " . $popis . " Zaplatit " . $amount . " Kč");
-    header("Location: /index.php");
-    /* Make sure that code below does not get executed when we redirect. */
-    exit;
-} else {
     header("Location: /index.php");
     /* Make sure that code below does not get executed when we redirect. */
     exit;

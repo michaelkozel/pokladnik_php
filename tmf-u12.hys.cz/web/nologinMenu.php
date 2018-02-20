@@ -8,5 +8,5 @@
 ?>
 <ul class="menu">
     <li><a href="index.php">Login</a></li>
-    <li><a href="showActions.php">Show Actions</a></li>
+    <li><a href="showActions.php">Zobrazit akce</a></li>
 </ul>

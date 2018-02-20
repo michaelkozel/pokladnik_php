@@ -10,7 +10,7 @@ $servername = "sql.endora.cz:3308";
 $server_username = "tmfu121474034453";
 $server_password = "jahnvita";
 $dbName = "platbyakce";
-$id = $_POST["titulek"]; // nazev tabulky
+$id = $_POST["id"]; // nazev tabulky
 $nazevTabulky = $id . "dat";
 //connection
 $connection = new mysqli($servername, $server_username, $server_password, $dbName);

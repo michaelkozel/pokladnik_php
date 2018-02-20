@@ -18,10 +18,14 @@ $surname = $_POST["surname"];
 $connection = new mysqli($servername, $server_username, $server_password, $dbName);
 $sql = "INSERT INTO " . $nazevTabulky . " (Name, Surname, Zaplatil)VALUES ('" . $name . "', '" . $surname . "', 0)";
 //$sql = "INSERT INTO ".$nazevTabulky." (Name, Surname, Zaplatil)VALUES ('jmeno', 'prijmeni', 0)";
-if (isset($_COOKIE["prihlaseno"]) && $_COOKIE["prihlaseno"] == 1) {
-    if (isset($_POST["name"]) && isset($_POST["surname"]) && $name != "" && $surname != "") {
-        $result = mysqli_query($connection, $sql);
-    }
+session_start();
+if (!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true) {
+    header("Location: index.php");
+}
+else {
+        if (isset($_POST["name"]) && isset($_POST["surname"]) && $name != "" && $surname != "") {
+            $result = mysqli_query($connection, $sql);
+        }
     else{
         echo("<p>Nezadali jste kompletní údaje</p>");
     }

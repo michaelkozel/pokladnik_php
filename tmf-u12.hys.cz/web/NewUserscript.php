@@ -17,9 +17,11 @@ $name = $_POST["namePost"];
 $surname = $_POST["surnamePost"];
 $admincode = $_POST["admincodePost"];
 $balance = 0;
-
-if (isset($_COOKIE["prihlaseno"]) && $_COOKIE["prihlaseno"] == 1) {
-
+session_start();
+if (!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true) {
+    header("Location: /loginformular.php?sitefrom=/NewUser.php");
+}
+else{
 //connection
     $connection = new mysqli($servername, $server_username, $server_password, $dbName);
 
@@ -30,10 +32,6 @@ if (isset($_COOKIE["prihlaseno"]) && $_COOKIE["prihlaseno"] == 1) {
     $sql = "INSERT INTO Users(Name, Surname, Balance) VALUES('" . $name . "','" . $surname . "','" . $balance . "')";
     $result = mysqli_query($connection, $sql);
     echo "uživatel přidán";
-    header("Location: /index.php");
-    /* Make sure that code below does not get executed when we redirect. */
-    exit;
-} else {
     header("Location: /index.php");
     /* Make sure that code below does not get executed when we redirect. */
     exit;

@@ -57,6 +57,7 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true) {
                         } else {
                             $checkedString = "";
                         }
+                        if($name!= "Pokladna"){
                         ?>
                         <!-- generování inputu z databáze pomocí php-->
                         <input  type="checkbox"  <?php echo htmlspecialchars($checkedString); ?>
@@ -64,7 +65,7 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true) {
                                 value="<?php echo htmlspecialchars($pocet); ?>"><?php echo htmlspecialchars($name . " " . $surname); ?>
                         <br>
                         <?
-                    }
+                    }}
                     ?>
                     <input type="hidden" name="pocet" value="<?php echo htmlspecialchars($pocet); ?>"/>
                     <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>"/>

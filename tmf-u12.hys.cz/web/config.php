@@ -5,11 +5,11 @@
  * Date: 27. 1. 2018
  * Time: 13:08
  */
-$GLOBALS['adminPassword'] = "auticko";  //admin heslo pro přístup k datům
+$GLOBALS['adminPassword'] = "";  //admin heslo pro přístup k datům
 //databaze
-$GLOBALS['servername'] = "sql.endora.cz:3308";
-$GLOBALS['username'] = "tmfu121474034453";   //username k databazi
-$GLOBALS['password'] = "jahnvita";           //password k databazi
+$GLOBALS['servername'] = "";
+$GLOBALS['username'] = "";   //username k databazi
+$GLOBALS['password'] = "";           //password k databazi
 
 function create()
 {

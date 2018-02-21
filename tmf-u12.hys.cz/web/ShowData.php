@@ -33,10 +33,13 @@ if (mysqli_num_rows($result) > 0) {
     echo "<table>";
     echo "<tr><th>Name</th><th>Amount</th><th>Date</th><th>Comment</th></tr>";
     while ($row = mysqli_fetch_assoc($result)) {
-        $rawDate =  $row['Date'];
+        $rawDate = $row['Date'];
         $dateArray = explode("-", $rawDate);
-        $dateString = $dateArray[2].".".$dateArray[1].".".$dateArray[0];
-        echo "<tr>" . "<td>" . $row['Name'] . "</td><td>" . $row['Amount'] . "</td><td>" . $dateString . "</td><td>" . $row['Comment'] . "</td></tr>";
+        $dateString = $dateArray[2] . "." . $dateArray[1] . "." . $dateArray[0];
+        if ($row['Amount'] != 0) {
+            echo "<tr>" . "<td>" . $row['Name'] . "</td><td>" . $row['Amount'] . "</td><td>" . $dateString . "</td><td>" . $row['Comment'] . "</td></tr>";
+
+        }
     }
     echo "</table>";
 }

@@ -6,10 +6,11 @@
  * Time: 22:00
  */
 
-include '../utilities.php';
-$servername = "sql.endora.cz:3308";
-$server_username = "tmfu121474034453";
-$server_password = "jahnvita";
+include 'utilities.php';
+include 'config.php';
+$servername = getservername();
+$server_username = getusername();
+$server_password = getServerPassword();
 $dbName = "platbyakce";  //db s tabulkami lidí pro dané akce s daty jestli zaplatili nebo ne
 $dbName2 = "tmfu121474034453"; // db s tabulkami akcí
 $connection = new mysqli($servername, $server_username, $server_password, $dbName); //připojení k databázi, kde jsou tabulky platičů k jednotlivým akcím

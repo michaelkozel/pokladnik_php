@@ -12,10 +12,10 @@
  * Time: 18:08
  */
 include '../utilities.php';
-
-$servername = "sql.endora.cz:3308";
-$server_username = "tmfu121474034453";
-$server_password = "jahnvita";
+include '../config.php';
+$servername = getservername();
+$server_username = getusername();
+$server_password = getServerPassword();
 $id = $_POST["id"]; // id tabulky
 $nazevTabulky = $id . "dat"; // id je pouze cislo nazev pridava za cislo "dat"
 

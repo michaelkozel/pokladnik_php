@@ -6,9 +6,11 @@
  * Time: 22:32
  */
 
-$servername = "sql.endora.cz:3308";
-$server_username = "tmfu121474034453";
-$server_password = "jahnvita";
+include '../utilities.php';
+include '../config.php';
+$servername = getservername();
+$server_username = getusername();
+$server_password = getServerPassword();
 $dbName = "platbyakce";
 $dbName2 = "tmfu121474034453";
 $idTabulky = $_POST["tableName"]; // id tabulky - cislo

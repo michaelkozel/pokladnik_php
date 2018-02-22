@@ -1,8 +1,9 @@
 <?php
+include '../utilities.php';
 include '../config.php';
-$servername = "sql.endora.cz:3308";
-$server_username = "tmfu121474034453";
-$server_password = "jahnvita";
+$servername = getservername();
+$server_username = getusername();
+$server_password = getServerPassword();
 $dbName = "tmfu121474034453";
 $heslo = $_POST["heslo"];
 $view = $_POST["view"];
@@ -26,15 +27,11 @@ if (isset($_POST["heslo"]) || (isset($_POST["view"]))) {
                 $balance = $row['Balance'];
 
                 $posts[] = array('surname' => $surname, 'name' => $name, 'balance' => $balance);
-
             }
 
         }
         $response['users'] = $posts;
         echo json_encode($response, JSON_UNESCAPED_UNICODE);
-        $fp = fopen('test', 'w');
-        fwrite($fp, json_encode($response, JSON_UNESCAPED_UNICODE));
-        fclose($fp);
     } else {
         echo "Špatné heslo";
     }

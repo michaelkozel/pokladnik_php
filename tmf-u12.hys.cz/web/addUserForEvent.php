@@ -6,9 +6,9 @@
  * Time: 20:28
  */
 
-$servername = "sql.endora.cz:3308";
-$server_username = "tmfu121474034453";
-$server_password = "jahnvita";
+$servername = getservername();
+$server_username = getusername();
+$server_password = getServerPassword();
 $dbName = "platbyakce";
 $id = $_POST["id"]; // id tabulky
 $nazevTabulky = $id . "dat"; // id je pouze cislo nazev pridava za cislo "dat"

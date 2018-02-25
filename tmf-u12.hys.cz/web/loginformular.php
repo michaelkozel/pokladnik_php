@@ -16,6 +16,7 @@ $sitefrom = $_GET["sitefrom"];
 <h1>Vítejte!</h1>
 <p>Vítejte na stránkách systému pro pokladnu třídy!</p>
 <p>Pro zobrazení akcí, klikněte v menu na show actions!</p>
+<p style="color:grey">//toto je funkční ukázka, heslo pro vyzkoušení systému: auticko</p>
 <div class="vstup">
     <form action="login.php" method="post">
         <p>Pro pokročilé akce se prosím přihlašte!</p>

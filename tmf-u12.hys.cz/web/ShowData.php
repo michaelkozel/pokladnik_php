@@ -15,9 +15,10 @@ include("menu.php");
 if (!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true) {
     header("Location: /loginformular.php?sitefrom=/NewTransaction.php");
 }
-$servername = "sql.endora.cz:3308";
-$server_username = "tmfu121474034453";
-$server_password = "jahnvita";
+include './config.php';
+$servername = getservername();
+$server_username = getusername();
+$server_password = getServerPassword();
 $dbName = "tmfu121474034453";
 
 //connection

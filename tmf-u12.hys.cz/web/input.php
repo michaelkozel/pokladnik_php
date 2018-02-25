@@ -1,4 +1,5 @@
 <?php
+include './config.php';
 $servername = getservername();
 $server_username = getusername();
 $server_password = getServerPassword();

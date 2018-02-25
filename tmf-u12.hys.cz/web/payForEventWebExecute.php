@@ -5,6 +5,8 @@
  * Date: 28. 1. 2018
  * Time: 2:35
  */
+include 'utilities.php';
+include 'config.php';
 $servername = getservername();
 $server_username = getusername();
 $server_password = getServerPassword();

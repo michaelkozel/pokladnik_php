@@ -18,5 +18,6 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true) {
 <p>Vítejte na stránkách systému pro pokladnu třídy!</p>
 
 
+
 </body>
 </html>

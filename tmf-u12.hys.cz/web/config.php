@@ -7,7 +7,7 @@
  */
 $GLOBALS['adminPassword'] = "";  //admin heslo pro přístup k datům
 //databaze
-$GLOBALS['servername'] = "";   //adresa k serveru
+$GLOBALS['servername'] = "";  //adresa serveru
 $GLOBALS['username'] = "";   //username k databazi
 $GLOBALS['password'] = "";           //password k databazi
 
